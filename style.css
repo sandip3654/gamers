@@ -1,97 +1,92 @@
-body, html {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  background: url('https://i.postimg.cc/fbfzGZFS/pexels-anna-alexes-18139455-8080278.jpg') no-repeat center center fixed;
+  background-size: cover;
   font-family: sans-serif;
-  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 10px;
 }
 
-.bg-image {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -2;
-}
-
-.blur-card {
-  backdrop-filter: blur(8px);
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 20px;
-  margin: 50px auto;
+#app-wrapper {
+  width: 100%;
   max-width: 400px;
-  text-align: center;
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 20px 15px 30px 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
 }
 
-.header {
+#app-card {
   width: 100%;
-  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
 
-.wheel-container {
+#headline {
+  width: 85%;
+  max-width: 320px;
+  margin-bottom: 5px;
+}
+
+#wheel-container {
   position: relative;
-  width: 100%;
-  margin: 0 auto;
+  width: 80vw;
+  max-width: 300px;
+  height: 80vw;
+  max-height: 300px;
 }
 
 #wheel {
   width: 100%;
-  max-width: 300px;
-  animation: none;
-}
-
-.pointer {
-  position: absolute;
-  top: 42%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  z-index: 2;
-}
-
-#spin {
-  margin-top: 80px;
-  padding: 15px 30px;
-  font-size: 18px;
-  background: #fbb034;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-#ad-desktop, .ad-mobile {
-  display: none;
-}
-
-/* Confetti canvas */
-#confetti {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
   height: 100%;
-  pointer-events: none;
-  z-index: 999;
+  border-radius: 50%;
+  transition: transform 4s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-/* Responsive Ads Display */
-@media (min-width: 768px) {
-  .ad-desktop {
-    display: block;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 999;
-  }
+#pointer {
+  position: absolute;
+  top: 98%;
+  left: 50%;
+  transform: translate(-50%, 0) rotate(180deg);
+  width: 30px;
+  height: 30px;
+  z-index: 10;
 }
 
-@media (max-width: 767px) {
-  .ad-mobile {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 999;
-  }
+#pointer::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  margin: auto;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 30px solid red;
+}
+
+#spin-btn {
+  width: 100px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin-top: 20px;
+}
+
+#spin-btn:active {
+  transform: scale(0.95);
 }
