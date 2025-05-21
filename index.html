@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spin & Win</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-image: url('https://i.postimg.cc/fbfzGZFS/pexels-anna-alexes-18139455-8080278.jpg');
+      background-size: cover;
+      background-position: center;
+      font-family: sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .card {
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+      max-width: 350px;
+      width: 100%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    .header-img {
+      width: 100%;
+      max-width: 250px;
+      margin: 0 auto 20px;
+    }
+    .wheel-container {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .wheel {
+      width: 100%;
+      max-width: 300px;
+    }
+    .pointer {
+      width: 40px;
+      position: absolute;
+      top: 48%;
+      left: 50%;
+      transform: translate(-50%, -100%);
+      z-index: 10;
+    }
+    #spinBtn {
+      padding: 12px 20px;
+      background-color: #ff9800;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Desktop Top Banner Ad -->
+  <div class="ad-desktop" style="display:none;">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '0dbef2da9300bdcb02249873e7b59731',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 728,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/0dbef2da9300bdcb02249873e7b59731/invoke.js"></script>
+  </div>
+
+  <!-- Mobile Top Banner Ad -->
+  <div class="ad-mobile" style="display:none;">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '65bd1a4350fc0c6931e96b19d5b279f1',
+        'format' : 'iframe',
+        'height' : 50,
+        'width' : 320,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/65bd1a4350fc0c6931e96b19d5b279f1/invoke.js"></script>
+  </div>
+
+  <div class="card">
+    <img class="header-img" src="https://i.postimg.cc/V64bYTs7/20250521-012313.png" alt="Header" />
+    <div class="wheel-container">
+      <img class="wheel" id="wheel" src="https://i.postimg.cc/tRFJj7rB/wheel.png" alt="Wheel" />
+      <img class="pointer" src="https://i.postimg.cc/fLw1j9j7/pointer.png" alt="Pointer" />
+    </div>
+    <button id="spinBtn">SPIN NOW</button>
+  </div>
+
+  <!-- Desktop Side Banner Ad -->
+  <div class="ad-desktop" style="display:none;">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : 'd32f315fe86b9c278284e14cb0beaacb',
+        'format' : 'iframe',
+        'height' : 250,
+        'width' : 300,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/d32f315fe86b9c278284e14cb0beaacb/invoke.js"></script>
+  </div>
+
+  <!-- Mobile Bottom Banner Ad -->
+  <div class="ad-mobile" style="display:none;">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '65bd1a4350fc0c6931e96b19d5b279f1',
+        'format' : 'iframe',
+        'height' : 50,
+        'width' : 320,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/65bd1a4350fc0c6931e96b19d5b279f1/invoke.js"></script>
+  </div>
+
+  <!-- Social Bar Ad -->
+  <script type='text/javascript' src='//pl26701451.profitableratecpm.com/bc/0b/5d/bc0b5dfbb5cf7a11b1bc362d01e0dbcd.js'></script>
+
+  <script>
+    const wheel = document.getElementById("wheel");
+    const spinBtn = document.getElementById("spinBtn");
+    let deg = 0;
+
+    function isMobile() {
+      return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    }
+
+    // Show relevant ad type
+    window.onload = function () {
+      if (isMobile()) {
+        document.querySelectorAll(".ad-mobile").forEach(el => el.style.display = "block");
+      } else {
+        document.querySelectorAll(".ad-desktop").forEach(el => el.style.display = "block");
+      }
+    };
+
+    spinBtn.addEventListener("click", () => {
+      deg = Math.floor(5000 + Math.random() * 5000);
+      wheel.style.transition = "transform 4.5s ease-out";
+      wheel.style.transform = `rotate(${deg}deg)`;
+
+      // Optional: show social bar ad again after spin, or popunder logic.
+    });
+  </script>
+</body>
+</html>
