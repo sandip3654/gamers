@@ -2,88 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Spin & Win</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spin the Wheel</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Social Bar Ad (on load) -->
-  <script type="text/javascript" src="//pl26701451.profitableratecpm.com/bc/0b/5d/bc0b5dfbb5cf7a11b1bc362d01e0dbcd.js"></script>
+  <div id="app-wrapper">
+    <div id="app-card">
+      <img
+        id="headline"
+        src="https://i.postimg.cc/V64bYTs7/20250521-012721-removebg-preview.png"
+        alt="Headline"
+      />
 
-  <div class="main-container">
-    <img src="https://i.postimg.cc/fbfzGZFS/pexels-anna-alexes-18139455-8080278.jpg" class="bg-image" />
-
-    <div class="blur-card">
-      <img src="https://i.postimg.cc/MK3c6HWT/header.png" alt="Header" class="header" />
-
-      <div class="wheel-container">
-        <img id="wheel" src="https://i.postimg.cc/XYrTzkf1/wheel.png" alt="Wheel" />
-        <img src="https://i.postimg.cc/TwqB3WqM/pointer.png" class="pointer" />
+      <div id="wheel-container">
+        <img
+          id="wheel"
+          src="https://i.postimg.cc/k4LfyBK3/20250521-122519.png"
+          alt="Spin Wheel"
+        />
+        <div id="pointer"></div>
       </div>
 
-      <button id="spin" onclick="spin()">Spin Now</button>
+      <img
+        id="spin-btn"
+        src="https://i.postimg.cc/DyTtVM4V/images-19-removebg-preview.png"
+        alt="Spin Now"
+      />
     </div>
   </div>
 
-  <!-- Ads -->
-  <div id="ads-container">
-    <div class="ad-desktop">
-      <!-- Desktop Top (728x90) -->
-      <script type="text/javascript">
-        atOptions = {
-          'key': '0dbef2da9300bdcb02249873e7b59731',
-          'format': 'iframe',
-          'height': 90,
-          'width': 728,
-          'params': {}
-        };
-      </script>
-      <script src="//www.highperformanceformat.com/0dbef2da9300bdcb02249873e7b59731/invoke.js"></script>
-
-      <!-- Desktop Side (300x250) -->
-      <script type="text/javascript">
-        atOptions = {
-          'key': 'd32f315fe86b9c278284e14cb0beaacb',
-          'format': 'iframe',
-          'height': 250,
-          'width': 300,
-          'params': {}
-        };
-      </script>
-      <script src="//www.highperformanceformat.com/d32f315fe86b9c278284e14cb0beaacb/invoke.js"></script>
-    </div>
-
-    <div class="ad-mobile">
-      <!-- Mobile Top (320x50) -->
-      <script type="text/javascript">
-        atOptions = {
-          'key': '65bd1a4350fc0c6931e96b19d5b279f1',
-          'format': 'iframe',
-          'height': 50,
-          'width': 320,
-          'params': {}
-        };
-      </script>
-      <script src="//www.highperformanceformat.com/65bd1a4350fc0c6931e96b19d5b279f1/invoke.js"></script>
-
-      <!-- Mobile Bottom (320x50) -->
-      <script type="text/javascript">
-        atOptions = {
-          'key': '65bd1a4350fc0c6931e96b19d5b279f1',
-          'format': 'iframe',
-          'height': 50,
-          'width': 320,
-          'params': {}
-        };
-      </script>
-      <script src="//www.highperformanceformat.com/65bd1a4350fc0c6931e96b19d5b279f1/invoke.js"></script>
-    </div>
-  </div>
-
-  <!-- Confetti and Sound -->
-  <canvas id="confetti"></canvas>
-  <audio id="taDaSound" src="https://assets.mixkit.co/sfx/preview/mixkit-winning-notification-2018.mp3"></audio>
-
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <audio
+    id="celebration-sound"
+    src="https://www.myinstants.com/media/sounds/tada-fanfare.mp3"
+    preload="auto"
+  ></audio>
   <script src="script.js"></script>
 </body>
 </html>
